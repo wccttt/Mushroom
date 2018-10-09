@@ -3,15 +3,13 @@
 @color: #666;
 @colorFont: #999;
 @background-color: #f2f2f2;
-@img: url("../image/spirit.png");
+@img: url("../image/index/spirit.png");
 @radius: 0 0 5px 5px;
 @border: 1px solid #ddd;
 @hoverColor: #cdd1bb;
 @colorMost: #f07;
 @fontSize: 10px;
-a:hover{
-  text-decoration: underline;
-}
+
 
 img{
   border: none;
@@ -191,6 +189,8 @@ header {
     }
 
     .search {
+
+      text-align: center;
       height: 90px;
       width: 482px;
       margin-left: 120px;
@@ -222,7 +222,7 @@ header {
               }
               i {
                 display: block;
-                background: url("../image/spirit.png") -47px -222px no-repeat;
+                background: url("../image/index/spirit.png") -47px -222px no-repeat;
                 width: 18px;
                 height: 16px;
                 position: absolute;
@@ -375,7 +375,7 @@ header {
 
   .main_shop{
     float: left;
-    background: url("../image/main_tip.png") ;
+    background: url("../image/index/main_tip.png") ;
     width: 257px;
     height: 40px;
     border-top-left-radius: 5px;
@@ -514,7 +514,7 @@ position: relative;
           text-align: center;
           width: 250px;
           h3{
-            color: #999999;
+            color: #333;
             font-size: 16px;
           }
           ul{
@@ -537,13 +537,14 @@ position: relative;
                   opacity: .4;
                 }
                 span{
-                  width: 100px;
+                margin-left: 10px;
+                  width: 90px;
                   overflow: hidden;
                   white-space:nowrap ;
                   text-overflow:ellipsis;
                   display: block;
                   color: #999999;
-                  font-size: 14px;
+                  font-size: 12px;
 
                 }
               }
@@ -580,9 +581,12 @@ position: absolute;
   top: 0;
   left: 257px;
   overflow: hidden;
+
   img{
     width: 100%;
     height: 100%;
+
+    //opacity: 0;
   }
 }
   .focus{
@@ -597,16 +601,24 @@ position: absolute;
       background-color: #f2f2f2;
       border-radius: 50%;
       margin: 5px;
-
-    }
-    .selected_focus{
-
-      //background: url("../image/swiper_button.png") ;
-      //background-size: cover;
       img{
         height: 100%;
         width: 100%;
+        display: none;
       }
+
+    }
+    .selected_focus{
+      img{
+        transition: all 0s ;
+        animation:myRotate 1.5s linear 0s   1 normal running none ;
+        display: block;
+      }
+
+
+      //background: url("../image/swiper_button.png") ;
+      //background-size: cover;
+
 
 
     }
@@ -639,7 +651,7 @@ position: absolute;
           height: 80px;
           border-radius: 50%;
           margin:0 auto;
-          background: #ff94c6 url(../image/user_head.png) no-repeat center center;
+          background: #ff94c6 url(../image/index/user_head.png) no-repeat center center;
           background-size: 30px 30px;
           img{
             width: 100%;
@@ -702,5 +714,15 @@ position: absolute;
       }
 
     }
+  }
+}
+
+@keyframes myRotate {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
   }
 }
